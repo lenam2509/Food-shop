@@ -68,6 +68,6 @@
   }
 
   .sidebar_link {
-    @apply flex w-[200px] items-center gap-2 rounded-lg py-1 font-bold text-white transition delay-100 ease-in hover:bg-[#F8B602];
+    @apply flex w-full items-center gap-2 rounded-lg py-1 font-bold text-white transition delay-100 ease-in hover:bg-[#F8B602];
   }
 }

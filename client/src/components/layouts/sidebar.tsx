@@ -49,7 +49,7 @@ export default function Sidebar() {
       <h1 className="text-3xl font-bold">
         GoMeal<span className="text-2xl text-yellow-500">.</span>
       </h1>
-      <div className="mt-10 flex flex-col items-center gap-4">
+      <div className="mt-10 flex w-[200px] flex-col items-center gap-4">
         {sidebarMenu.map((menu, index) => (
           <Link
             href={menu.href}
@@ -66,6 +66,13 @@ export default function Sidebar() {
             <span className="ml-2"> {menu.name} </span>
           </Link>
         ))}
+        <div className="relative flex min-h-[100px] w-full flex-col gap-4 overflow-hidden rounded-xl border border-red-400 bg-[#F8B602] p-4 font-bold text-white">
+          <span>Upgrade your Account to Get Free Voucher</span>
+          <button className="w-fit rounded-lg bg-white px-4 py-2 text-sm font-semibold text-black">
+            Upgrade
+          </button>
+          <div className="absolute -bottom-20 -right-24 h-[170px] w-[170px] rounded-full bg-white/50"></div>
+        </div>
       </div>
     </div>
   );
