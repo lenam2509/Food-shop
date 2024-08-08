@@ -88,7 +88,7 @@ export default function Rightbar() {
         <h1 className="text-lg font-bold">Order Menu</h1>
         <div className="flex flex-col gap-4 border-b border-gray-500 py-4">
           {Array.from({ length: 1 }).map((_, index) => (
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between" key={index}>
               <div className="flex items-center">
                 <Image src={"/pizza.png"} width={100} height={100} alt="" />
                 <div className="flex flex-col">
