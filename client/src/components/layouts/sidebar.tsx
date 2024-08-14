@@ -45,7 +45,7 @@ export default function Sidebar() {
   const pathName = usePathname();
 
   return (
-    <div className="flex w-[345px] flex-col items-center">
+    <div className="flex w-[345px] flex-col items-center ">
       <h1 className="text-3xl font-bold">
         GoMeal<span className="text-2xl text-yellow-500">.</span>
       </h1>

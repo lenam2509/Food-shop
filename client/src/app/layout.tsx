@@ -24,7 +24,9 @@ export default function RootLayout({
       <body className={poppins.className}>
         <main className="flex min-h-screen pt-10">
           <Sidebar />
-          <section className="flex-1">{children}</section>
+          <section className="min-h-screen flex-1 bg-slate-100 px-4">
+            {children}
+          </section>
           <Rightbar />
         </main>
       </body>
