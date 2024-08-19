@@ -1,3 +1,7 @@
+import ProductCard from "@/components/ProductCard";
+
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex h-full w-full flex-col">
@@ -12,8 +16,8 @@ export default function Home() {
           <SearchIcon className="absolute right-2 size-6 cursor-pointer text-yellow-500" />
         </form>
       </div>
-      <div className="mt-4 flex min-h-[200px] items-center justify-between gap-4 rounded-lg bg-yellow-400 px-8">
-        <div className="w-1/2">
+      <div className="relative mt-4 flex justify-between gap-4 overflow-hidden rounded-lg bg-yellow-400 px-8">
+        <div className="flex w-1/2 flex-col justify-center">
           <h2 className="text-xl font-bold text-white">
             Get Discount Voucher Up To 20%
           </h2>
@@ -22,16 +26,44 @@ export default function Home() {
             eiusmod tempor incididunt.
           </span>
         </div>
-        <div className="flex w-1/2 justify-center">
-          <img
-            src="https://th.bing.com/th/id/OIP.SRh66QF_5VFgmVeg8m3u-wHaJe?pid=ImgDet&w=134.4255319148936&h=180&c=7"
-            className="rounded-lg"
-            alt="food"
-          />
+        <div className="z-10 flex w-1/2 justify-center">
+          <img src="/girl_baner.png" className="rounded-lg" alt="food" />
+        </div>
+        <div className="absolute -bottom-40 -left-10 h-[250px] w-[250px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
+        <div className="absolute -bottom-40 -right-10 h-[250px] w-[250px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
+        <div className="absolute -top-32 right-32 z-[1] h-[200px] w-[200px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
+      </div>
+      <div className="mt-8">
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-lg font-bold">Category</h2>
+          <Link href={"/"} className="text-sm font-bold text-yellow-400">
+            See all &gt;
+          </Link>
+        </div>
+        <div className="flex items-center gap-4">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <div
+              key={index}
+              className="flex h-[100px] w-[100px] flex-col items-center justify-center gap-2 rounded-lg bg-white"
+            >
+              <img src="/Baked.png" alt="burger" className="h-10 w-10" />
+              <span className="text-sm text-gray-400">Bakery</span>
+            </div>
+          ))}
         </div>
       </div>
-      <div>
-        
+      <div className="mt-8">
+        <div className="mb-4 flex items-center justify-between">
+          <h2 className="text-lg font-bold">Popular Dishes</h2>
+          <Link href={"/"} className="text-sm font-bold text-yellow-400">
+            See all &gt;
+          </Link>
+        </div>
+        <div className="grid grid-cols-3 gap-4">
+          {Array.from({ length: 3 }).map((_, index) => (
+            <ProductCard key={index} />
+          ))}
+        </div>
       </div>
     </div>
   );
