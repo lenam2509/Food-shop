@@ -1,13 +1,23 @@
 import ProductCard from "@/components/ProductCard";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex h-full w-full flex-col">
-      <div className="flex justify-between">
-        <h1 className="text-2xl font-bold">Hello, Patricia</h1>
-        <form className="relative flex w-[300px] items-center pt-1">
+      <div className="flex items-center justify-between py-4 md:hidden">
+        <div className="text-2xl font-bold">
+          GoMeal<span className="font-bold text-yellow-400">.</span>
+        </div>
+        <Avatar className="cursor-pointer">
+          <AvatarImage src="https://github.com/shadcn.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+      </div>
+      <div className="flex justify-center md:justify-between">
+        <h1 className="hidden text-2xl font-bold md:block">Hello, Patricia</h1>
+        <form className="relative flex w-[270px] items-center pt-1 md:w-[300px]">
           <input
             type="text"
             className="w-full rounded-lg p-2"
@@ -17,19 +27,19 @@ export default function Home() {
         </form>
       </div>
       <div className="relative mt-4 flex justify-between gap-4 overflow-hidden rounded-lg bg-yellow-400 px-8">
-        <div className="flex w-1/2 flex-col justify-center">
-          <h2 className="text-xl font-bold text-white">
+        <div className="flex w-3/4 flex-col justify-center md:w-1/2">
+          <h2 className="text-sm font-bold text-white md:text-xl">
             Get Discount Voucher Up To 20%
           </h2>
-          <span className="text-sm text-gray-100">
+          <span className="text-[10px] text-gray-100">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt.
           </span>
         </div>
         <div className="z-10 flex w-1/2 justify-center">
-          <img src="/girl_baner.png" className="rounded-lg" alt="food" />
+          <img src="/girl_baner.png" className="w-full rounded-lg" alt="food" />
         </div>
-        <div className="absolute -bottom-40 -left-10 h-[250px] w-[250px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
+        <div className="absolute -bottom-40 -left-10 rounded-full border-[50px] border-white/20 bg-transparent md:h-[250px] md:w-[250px]"></div>
         <div className="absolute -bottom-40 -right-10 h-[250px] w-[250px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
         <div className="absolute -top-32 right-32 z-[1] h-[200px] w-[200px] rounded-full border-[50px] border-white/20 bg-transparent"></div>
       </div>
@@ -40,7 +50,7 @@ export default function Home() {
             See all &gt;
           </Link>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:flex-nowrap">
           {Array.from({ length: 6 }).map((_, index) => (
             <div
               key={index}
@@ -59,7 +69,7 @@ export default function Home() {
             See all &gt;
           </Link>
         </div>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
           {Array.from({ length: 3 }).map((_, index) => (
             <ProductCard key={index} />
           ))}

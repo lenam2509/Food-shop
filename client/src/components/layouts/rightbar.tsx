@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Rightbar() {
   return (
-    <div className="flex w-[400px] flex-col gap-4 px-8 pb-4">
+    <div className="hidden w-[400px] flex-col gap-4 px-8 pb-4 md:flex">
       <div className="flex items-center justify-between text-black">
         <div className="flex items-center gap-4">
           <div className="relative cursor-pointer">
